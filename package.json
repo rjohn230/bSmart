@@ -56,7 +56,7 @@
     "angular2-chartjs": "0.4.1",
     "angular2-toaster": "6.0.0",
     "bootstrap": "4.0.0",
-    "chart.js": "2.7.1",
+    "chart.js": "^2.7.3",
     "ckeditor": "4.7.3",
     "classlist.js": "1.1.20150312",
     "core-js": "2.5.1",
@@ -81,10 +81,11 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^0.10.4",
     "@angular/cli": "6.0.0",
     "@angular/compiler-cli": "6.0.0",
     "@angular/language-service": "6.0.0",
-    "@compodoc/compodoc": "1.0.1",
+    "@compodoc/compodoc": "^1.1.6",
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@types/d3-color": "1.0.5",
     "@types/googlemaps": "3.30.4",
@@ -94,7 +95,6 @@
     "@types/node": "6.0.90",
     "codelyzer": "4.0.2",
     "conventional-changelog-cli": "1.3.4",
-    "husky": "0.13.3",
     "jasmine-core": "2.6.4",
     "jasmine-spec-reporter": "4.1.1",
     "karma": "1.7.1",
@@ -104,13 +104,12 @@
     "karma-jasmine": "1.1.0",
     "karma-jasmine-html-reporter": "0.2.2",
     "npm-run-all": "4.0.2",
-    "protractor": "5.1.2",
+    "protractor": "^5.4.1",
     "rimraf": "2.6.1",
     "stylelint": "7.13.0",
     "ts-node": "3.2.2",
     "tslint": "5.7.0",
     "tslint-language-service": "0.9.6",
-    "typescript": "2.7.2",
-    "@angular-devkit/build-angular": "~0.6.0"
+    "typescript": "2.7.2"
   }
 }
