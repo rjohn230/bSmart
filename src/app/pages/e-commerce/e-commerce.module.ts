@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
@@ -91,5 +91,6 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
   providers: [
     CountryOrdersMapService,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ECommerceModule { }
