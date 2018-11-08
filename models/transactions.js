@@ -16,7 +16,7 @@ const TransactionSchema = mongoose.Schema({
     required: true
   },
   date: {
-    type: Date,
+    type: Date, //This is a date object, so it's a bit wackier than normal
     required: true
   },
   name: {
