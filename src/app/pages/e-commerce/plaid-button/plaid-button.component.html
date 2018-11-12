@@ -1,0 +1,8 @@
+<nb-card size="medium">
+  <nb-card-body>
+    <mr-ngx-plaid-link-button env="development" publicKey="5b90ad3428575376ee2637218f0009" institution="" (Success)="onPlaidSuccess($event)"
+  (Exit)="onPlaidExit($event)" (Load)="onPlaidLoad($event)" (Event)="onPlaidEvent($event)" className="launch-plaid-link-button"
+  buttonText="Link Your Bank Account" (Click)="onPlaidClick($event)"></mr-ngx-plaid-link-button>
+
+  </nb-card-body>
+</nb-card>
