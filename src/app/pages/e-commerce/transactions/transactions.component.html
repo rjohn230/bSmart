@@ -1,0 +1,35 @@
+<nb-card size="medium">
+  <nb-card-header>
+    <span>Transactions</span>
+    <div class="dropdown ghost-dropdown" ngbDropdown>
+      <button type="button" class="btn btn-sm" ngbDropdownToggle
+              [ngClass]="{ 'btn-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
+        {{ type }}
+      </button>
+      <ul ngbDropdownMenu class="dropdown-menu">
+        <li class="dropdown-item"
+            *ngFor="let t of types"
+            (click)="getUserActivity(t); type = t">
+          {{ t }}
+        </li>
+      </ul>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <ul class="user-activity-list">
+      <li *ngFor="let transaction of transactions">
+        <div class="visited-date">
+          {{ transaction.date }}
+        </div>
+        <div class="visited-pages-count">
+          <div class="title">Name</div>
+          <div class="value">{{ transaction.name }}</div>
+        </div>
+        <div class="visited-percentages">
+          <div class="title">Amount</div>
+          <div class="value">{{ transaction.amount | currency:'USD' }}</div>
+        </div>
+      </li>
+    </ul>
+  </nb-card-body>
+</nb-card>
