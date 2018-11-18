@@ -7,7 +7,7 @@ import { TransactionsService, Transaction } from '../../../@core/data/transactio
 @Component({
   selector: 'ngx-transactions',
   templateUrl: './transactions.component.html',
-  styleUrls: ['../user-activity/user-activity.component.scss']
+  styleUrls: ['./transactions.component.scss']
 })
 export class ECommerceUserTransactionsComponent implements OnInit {
 

@@ -19,7 +19,8 @@
     <ul class="user-activity-list">
       <li *ngFor="let transaction of transactions">
         <div class="visited-date">
-          {{ transaction.date }}
+            <div class="title">Date</div>
+            <div class="value">{{ transaction.date | date:'shortDate' }}</div>
         </div>
         <div class="visited-pages-count">
           <div class="title">Name</div>
