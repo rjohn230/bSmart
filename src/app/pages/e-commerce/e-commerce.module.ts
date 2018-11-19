@@ -47,6 +47,7 @@ import { EarningCardFrontComponent } from './earning-card/front-side/earning-car
 import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earning-live-update-chart.component';
 import { ECommerceUserTransactionsComponent } from './transactions/transactions.component';
 import { TransactionsService } from '../../@core/data/transactions.service';
+import { BudgetComponent } from './budget/budget.component';
 
 @NgModule({
   imports: [
@@ -90,6 +91,7 @@ import { TransactionsService } from '../../@core/data/transactions.service';
     EarningPieChartComponent,
     EarningLiveUpdateChartComponent,
     ECommerceUserTransactionsComponent,
+    BudgetComponent,
   ],
   providers: [
     CountryOrdersMapService,
