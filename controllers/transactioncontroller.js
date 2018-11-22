@@ -10,7 +10,7 @@ exports.getTransactions = async function(query, page, limit){
     console.log(page, limit)
 
     try{
-        var todos = await TransactionService.getTransactions({}, page, limit)
+        var transaction = await TransactionService.getTransactions({}, page, limit)
         return res.status(200).json({status: 200, data: transaction, message: "Succesfully Recieved Transaction"});
     }catch(e){
         return res.status(400).json({status: 400, message: e.message});
@@ -21,7 +21,7 @@ exports.createTransactions = async function(req, res, next){
     var transaction = {
         transaction_id: transactioncreate.transaction_id,
         amount: transactioncreate.amount,
-        date: new Date(),
+        date: new Date(), //Does this need to be new? new might just create a date based on when it was added
         name: transactioncreate.name,
         category: transactioncreate.category
     }
