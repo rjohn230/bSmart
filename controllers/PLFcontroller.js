@@ -1,4 +1,4 @@
-const PLFservice = require('../models/PLFservice')
+const PLFservice = require('../services/PLFservice')
 
 _this = this
 
@@ -23,9 +23,9 @@ exports.createPLF = async function(req, res, next){
         rent: PLFcreate.rent,
         food: PLFcreate.food,
         entertainment: PLFcreate.entertainment,
-        travel: PLFcreate.travel
-        bills: PLFcreate.bills
-        custom: PLFcreate.custom
+        travel: PLFcreate.travel,
+        bills: PLFcreate.bills,
+        custom: PLFcreate.custom,
         revenue: PLFcreate.revenue
     }
 

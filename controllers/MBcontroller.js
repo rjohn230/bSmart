@@ -1,4 +1,4 @@
-const MBservice = require('../models/MBservice')
+const MBservice = require('../services/MBservice')
 
 _this = this
 
@@ -23,9 +23,9 @@ exports.createMB = async function(req, res, next){
         rent: MBcreate.rent,
         food: MBcreate.food,
         entertainment: MBcreate.entertainment,
-        travel: MBcreate.travel
-        bills: MBcreate.bills
-        custom: MBcreate.custom
+        travel: MBcreate.travel,
+        bills: MBcreate.bills,
+        custom: MBcreate.custom,
         revenue: MBcreate.revenue
     }
 
