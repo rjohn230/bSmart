@@ -1,4 +1,4 @@
-const TransactionService = require('../models/transactionsservice')
+const TransactionService = require('../services/transactionsservice')
 
 _this = this
 
