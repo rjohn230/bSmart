@@ -1,14 +1,6 @@
 {
-  "name": "ngx-admin",
-  "version": "2.3.0",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akveo/ngx-admin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/akveo/ngx-admin/issues"
-  },
+  "name": "bSmart",
+  "version": "1.0.0",
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -55,12 +47,14 @@
     "angular-tree-component": "7.2.0",
     "angular2-chartjs": "0.4.1",
     "angular2-toaster": "6.0.0",
+    "body-parser": "^1.18.3",
     "bootstrap": "4.0.0",
     "chart.js": "^2.7.3",
     "ckeditor": "4.7.3",
     "classlist.js": "1.1.20150312",
     "core-js": "2.5.1",
     "echarts": "^4.0.2",
+    "express": "^4.16.4",
     "intl": "1.2.5",
     "ionicons": "2.0.1",
     "leaflet": "1.2.0",

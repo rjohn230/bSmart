@@ -1,8 +1,13 @@
 <nb-card size="medium">
+  <nb-card-header>Connect your account to begin!</nb-card-header>
   <nb-card-body>
-    <mr-ngx-plaid-link-button env="development" publicKey="5b90ad3428575376ee2637218f0009" institution="" (Success)="onPlaidSuccess($event)"
-  (Exit)="onPlaidExit($event)" (Load)="onPlaidLoad($event)" (Event)="onPlaidEvent($event)" className="launch-plaid-link-button"
-  buttonText="Link Your Bank Account" (Click)="onPlaidClick($event)"></mr-ngx-plaid-link-button>
-
+      <div class="example-container col-sm-6 col-md-4 col-xl-3 col-xxxl-2" *ngFor="let hb of settings">
+          <div class="container-title">
+            <span>{{ hb.title }}</span>
+          </div>
+          <div class="container-btn">
+            <button class="btn-demo" nbButton hero (click)="openLink()">{{ hb.buttonTitle }}</button>
+          </div>
+      </div>
   </nb-card-body>
 </nb-card>
