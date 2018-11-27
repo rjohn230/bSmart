@@ -45,12 +45,9 @@ import { EarningCardBackComponent } from './earning-card/back-side/earning-card-
 import { EarningPieChartComponent } from './earning-card/back-side/earning-pie-chart.component';
 import { EarningCardFrontComponent } from './earning-card/front-side/earning-card-front.component';
 import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earning-live-update-chart.component';
-<<<<<<< HEAD
 import { PlaidButtonComponent } from './plaid-button/plaid-button.component';
-=======
 import { ECommerceUserTransactionsComponent } from './transactions/transactions.component';
 import { TransactionsService } from '../../@core/data/transactions.service';
->>>>>>> dev
 
 @NgModule({
   imports: [
@@ -93,11 +90,8 @@ import { TransactionsService } from '../../@core/data/transactions.service';
     EarningCardBackComponent,
     EarningPieChartComponent,
     EarningLiveUpdateChartComponent,
-<<<<<<< HEAD
     PlaidButtonComponent,
-=======
     ECommerceUserTransactionsComponent,
->>>>>>> dev
   ],
   providers: [
     CountryOrdersMapService,
