@@ -48,6 +48,7 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
 import { ECommerceUserTransactionsComponent } from './transactions/transactions.component';
 import { TransactionsService } from '../../@core/data/transactions.service';
 import { BudgetComponent } from './budget/budget.component';
+import { BudgetEditComponent } from './budget-edit/budget-edit.component';
 
 @NgModule({
   imports: [
@@ -92,6 +93,7 @@ import { BudgetComponent } from './budget/budget.component';
     EarningLiveUpdateChartComponent,
     ECommerceUserTransactionsComponent,
     BudgetComponent,
+    BudgetEditComponent,
   ],
   providers: [
     CountryOrdersMapService,

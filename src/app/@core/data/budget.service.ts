@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
 
 export class Category {
-    name: string;
-    budgetPercent: number;
+    constructor(
+        public name: string,
+        public budgetPercent: number
+    ) {}
 }
 
 export class Budget {
