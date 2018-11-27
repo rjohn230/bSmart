@@ -1,14 +1,6 @@
 {
-  "name": "ngx-admin",
-  "version": "2.3.0",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akveo/ngx-admin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/akveo/ngx-admin/issues"
-  },
+  "name": "bSmart",
+  "version": "1.0.0",
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -55,12 +47,14 @@
     "angular-tree-component": "7.2.0",
     "angular2-chartjs": "0.4.1",
     "angular2-toaster": "6.0.0",
+    "body-parser": "^1.18.3",
     "bootstrap": "4.0.0",
-    "chart.js": "2.7.1",
+    "chart.js": "^2.7.3",
     "ckeditor": "4.7.3",
     "classlist.js": "1.1.20150312",
     "core-js": "2.5.1",
     "echarts": "^4.0.2",
+    "express": "^4.16.4",
     "intl": "1.2.5",
     "ionicons": "2.0.1",
     "leaflet": "1.2.0",
@@ -69,8 +63,10 @@
     "ng2-completer": "2.0.8",
     "ng2-smart-table": "1.3.5",
     "ngx-echarts": "2.0.1",
+    "ngx-plaid-link": "^1.0.1",
     "normalize.css": "6.0.0",
     "pace-js": "1.0.2",
+    "plaid": "^2.9.0",
     "roboto-fontface": "0.8.0",
     "rxjs": "^6.1.0",
     "rxjs-compat": "^6.1.0",
@@ -81,10 +77,11 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^0.10.4",
     "@angular/cli": "6.0.0",
     "@angular/compiler-cli": "6.0.0",
     "@angular/language-service": "6.0.0",
-    "@compodoc/compodoc": "1.0.1",
+    "@compodoc/compodoc": "^1.1.6",
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@types/d3-color": "1.0.5",
     "@types/googlemaps": "3.30.4",
@@ -97,20 +94,19 @@
     "husky": "0.13.3",
     "jasmine-core": "2.6.4",
     "jasmine-spec-reporter": "4.1.1",
-    "karma": "1.7.1",
+    "karma": "^3.1.1",
     "karma-chrome-launcher": "2.1.1",
     "karma-cli": "1.0.1",
     "karma-coverage-istanbul-reporter": "1.3.0",
     "karma-jasmine": "1.1.0",
     "karma-jasmine-html-reporter": "0.2.2",
     "npm-run-all": "4.0.2",
-    "protractor": "5.1.2",
+    "protractor": "^5.4.1",
     "rimraf": "2.6.1",
     "stylelint": "7.13.0",
     "ts-node": "3.2.2",
     "tslint": "5.7.0",
     "tslint-language-service": "0.9.6",
-    "typescript": "2.7.2",
-    "@angular-devkit/build-angular": "~0.6.0"
+    "typescript": "2.7.2"
   }
 }

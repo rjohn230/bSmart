@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
@@ -45,6 +45,7 @@ import { EarningCardBackComponent } from './earning-card/back-side/earning-card-
 import { EarningPieChartComponent } from './earning-card/back-side/earning-pie-chart.component';
 import { EarningCardFrontComponent } from './earning-card/front-side/earning-card-front.component';
 import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earning-live-update-chart.component';
+import { PlaidButtonComponent } from './plaid-button/plaid-button.component';
 import { ECommerceUserTransactionsComponent } from './transactions/transactions.component';
 import { TransactionsService } from '../../@core/data/transactions.service';
 
@@ -89,11 +90,13 @@ import { TransactionsService } from '../../@core/data/transactions.service';
     EarningCardBackComponent,
     EarningPieChartComponent,
     EarningLiveUpdateChartComponent,
+    PlaidButtonComponent,
     ECommerceUserTransactionsComponent,
   ],
   providers: [
     CountryOrdersMapService,
     TransactionsService
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ECommerceModule { }
