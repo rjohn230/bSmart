@@ -8,11 +8,24 @@ import { Category } from '../../../@core/data/budget.service';
 })
 export class BudgetEditComponent implements OnInit {
 
-  categories = new Category("Food", 30);
+  categories: Category[];
 
   constructor() {}
 
   ngOnInit() {
+    this.categories = [
+      {
+        "name": "Rent",
+        "budgetPercent": 50
+      },
+      {
+        "name": "Food",
+        "budgetPercent": 40
+      },
+      {
+        "name": "Entertainment",
+        "budgetPercent": 10
+      }
+    ]
   }
-
 }
