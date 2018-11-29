@@ -1,26 +1,16 @@
-var mue = 0
-var stand = 0
-var current=
 
-	[
-		[
-		300,
-		300,
-		200,
-		100,
-		0,
-		1
-		]
-	]
-var ml_func = {
-		food:.035,
-		bills: .025,
-		transportation:.035,
-		entertainment:.035,
-		custom:.075
-	}
+var current
+var target
+var feats
 
-	var target =[
+
+function setUp()
+{
+
+ 
+
+
+	 target =[
 		[0],
 		[0],
 		[-500],
@@ -51,7 +41,7 @@ var ml_func = {
 		[250]
 		
 	]
-	var feats =[
+	 feats =[
 	[
 	200,
 	200,
@@ -279,28 +269,17 @@ var ml_func = {
 ]
 
 
-	var weight = [
-	ml_func.food,
-	ml_func.bills,
-	ml_func.transportation,
-	ml_func.entertainment,
-	ml_func.custom,
-	1
-	]
+	
 
-var alpha = .001
+ 
 //console.log(month_score.profit)
+}
 
-function userDatacrete() {
-	//create file  
-}
-function updateData(score)
-{
-	// add score to txt file
-	// push updated function to mongoDB
-}
+
 function normalizeData(data,score)
 {
+	mue = 0
+	stand = 0
 	feats_col= data[0].length-1
 	feats_rows =data.length
 	score_col= score[0].length-1
@@ -368,11 +347,25 @@ function normalizeData(data,score)
 function linearregesssion(score)
 {
 	// use ml_func from mongoDB
-	
+alpha = .001
 //console.log(knnRegression(2,feats,score,target))
 	
 normalizeData(feats,score)
-
+ml_func = {
+	food:.035,
+	bills: .025,
+	transportation:.035,
+	entertainment:.035,
+	custom:.075
+}
+weight = [
+	ml_func.food,
+	ml_func.bills,
+	ml_func.transportation,
+	ml_func.entertainment,
+	ml_func.custom,
+	1
+	]
 
 	// update weights
 	for(var i = 0;i<feats.length;i++)
@@ -457,5 +450,156 @@ function knnRegression(K,data,score,target)
 	
 	
 }
-console.log("knnRegression:"+knnRegression(2,feats,current,target))
-console.log("Linear Regression:"+linearregesssion(current))
+function setupANDpredict()
+{
+	// gather the existing data and predict
+	setUp() // simulates pulling from the databasee and structures the data
+	console.log("Knn Regression Prediction: "+knnRegression(2,feats,current,target))
+	console.log("Liner Regression Prediction: "+linearregesssion(current))
+}
+function setCurrentScore()
+{
+	// should get all the transactions from the current date until the begining of the month
+	current=
+
+	[
+		[
+		300,
+		300,
+		200,
+		100,
+		0,
+		1
+		]
+	]
+}
+function setPastScore(months)
+{
+
+	start_date = new Date()
+	start_date.setDate(1)
+	MonthlyTransactions = [9]
+	
+	dates= [8]
+	for (var s =0;s<months;s++)
+	{
+		
+
+		end_date = new Date(start_date)
+		end_date.setMonth(end_date.getMonth()-1)
+
+		start = start_date.getFullYear()+"-"+(start_date.getMonth()+1)+"-"+start_date.getDate()
+		end = end_date.getFullYear()+"-"+(end_date.getMonth()+1)+"-"+end_date.getDate()
+		console.log(start+" thru "+end)
+
+		/*ciient.getTransactions(accessYoken,end,start,{
+			count :250,
+			offset: 0,
+		},(err,result)=>{
+			// Handle error
+			MonthlyTransactions[s]= results.Transactions
+		
+		})*/
+		// dummy data
+		transactions = [
+			{"amount":150,"category":"food"},
+			{"amount":50,"category":"bills"},
+			{"amount":15,"category":"entertainment"},
+			{"amount":158,"category":"travel"},
+			{"amount":250,"category":"custom"},
+
+			{"amount":150,"category":"bills"},
+			{"amount":50,"category":"food"},
+			{"amount":15,"category":"travel"},
+			{"amount":158,"category":"custom"},
+			{"amount":250,"category":"custom"},
+
+			{"amount":150,"category":"custom"},
+			{"amount":50,"category":"travel"},
+			{"amount":15,"category":"entertainment"},
+			{"amount":158,"category":"travel"},
+			{"amount":250,"category":"bills"}
+		]
+		MonthlyTransactions[s] = transactions
+		
+		start_date = new Date(end_date)
+	}
+
+	MonthlyTransactions.forEach(transList => {
+		// the weight of the monthlt budget transactions  database
+		food =0
+		bills=0
+		entertainment=0
+		travel=0
+		custom=0
+		profit= 0
+		income = 4605.67 // dummy data
+		/*clientInformation.getIncome(accessToken,function(err,result){
+			//handle err
+			income = result.income
+		})*/
+		transList.forEach(trans =>
+			{
+				switch (trans.category)
+				{
+					case "food":
+						food+=trans.amount
+						break
+
+					case "bills":
+						bills+=trans.amount
+						break
+
+					case "entertainment":
+						entertainment+=trans.amount
+						break
+
+					case "travel":
+						travel+=trans.amount
+						break
+					case "custom":
+						custom+=trans.amount
+						break
+
+				}
+			})
+			profit = income - (food+bills+travel+custom+entertainment)
+			// create monthly budget and add it to the data base
+		console.log(profit)
+		
+	});
+
+
+
+
+	
+	
+	
+}
+
+function init ()
+{
+	// Check if user data has been created 
+	userISreal= true // some expression to see if the user really exist
+	setCurrentScore() // set current score
+	if (userISreal)
+	{
+		// get date from user
+		last_Update = new Date()
+		last_Update.setMonth(last_Update.getMonth()-2)
+		// dummy data above
+
+		today = new Date()
+		updateIsneeded = today.getMonth()> last_Update.getMonth()
+		 console.log(updateIsneeded)
+		if(updateIsneeded)setPastScore(1)
+		setupANDpredict()
+	 }
+	  // user existed and has stuff in data base
+	else{
+		// get past  6 months transaction and push it to the monthly budget database
+		setPastScore(6)//setupANDpredict()
+	}
+}
+
+init()
