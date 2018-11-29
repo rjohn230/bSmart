@@ -1,12 +1,12 @@
 <nb-card size="medium">
   <nb-card-header>Connect your account to begin!</nb-card-header>
   <nb-card-body>
-      <div class="example-container col-sm-6 col-md-4 col-xl-3 col-xxxl-2" *ngFor="let hb of settings">
-          <div class="container-title">
-            <span>{{ hb.title }}</span>
+      <div class="example-container col-sm-6 col-md-4 col-xl-3 col-xxxl-2">
+          <div >
+            <span>Connect to your bank account</span>
           </div>
-          <div class="container-btn">
-            <button class="btn-demo" nbButton hero (click)="openLink()">{{ hb.buttonTitle }}</button>
+          <div >
+            <button (click)="openLink()">Connect!</button>
           </div>
       </div>
   </nb-card-body>
