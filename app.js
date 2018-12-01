@@ -32,8 +32,16 @@ var index = require('./routes/indexroute');
 var users = require('./routes/usersroute');
 var transactions = require('./routes/transactionsroute')
 var api = require('./routes/apiroute');
+var learner = require('./routes/learnerroute')
 
 const app = express();
+var cons = require('consolidate');
+
+// view engine setup
+app.engine('html', cons.swig)
+app.set('views', path.join(__dirname, '/src/views'));
+app.set('view engine', 'jade');
+
 
 const port = process.env.PORT || 3000;
 
@@ -60,6 +68,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/transactions', transactions);
 app.use('/api', api);
+app.use('/learn',learner)
 
 //error route
 app.use(function(err, req, res, next) {

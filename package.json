@@ -7,18 +7,23 @@
 				"start": "node app"
 		},
 		"dependencies": {
+				"bcryptjs": "*",
+				"bluebird": "*",
+				"body-parser": "*",
+				"consolidate": "^0.15.1",
+				"cookie-parser": "*",
+				"cors": "*",
+				"ejs": "^2.6.1",
 				"express": "*",
+				"html": "^1.0.0",
+				"jade": "^1.11.0",
+				"jsonwebtoken": "*",
 				"mongoose": "*",
 				"mongoose-paginate": "*",
-				"bcryptjs": "*",
-				"cors": "*",
-				"jsonwebtoken": "*",
-				"body-parser": "*",
-				"cookie-parser": "*",
+				"nodemon": "*",
 				"passport": "*",
 				"passport-jwt": "*",
-				"bluebird": "*",
-				"nodemon": "*"
+				"swig": "^1.4.2"
 		},
 		"author": "rshock262",
 		"license": "ISC"
