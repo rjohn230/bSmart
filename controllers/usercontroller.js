@@ -9,8 +9,8 @@ exports.getUsers = async function(req, res, next){
     console.log(page, limit)
 
     try{
-        var usersGet = await UserService.getUsers({}, page, limit)
-        return res.status(200).json({status: 200, data: usersGet, message: "Succesfully Recieved Users"});
+        var users = await UserService.getUsers({}, page, limit)
+        return res.status(200).json({status: 200, data: users, message: "Succesfully Recieved Users"});
     }catch(e){
         return res.status(400).json({status: 400, message: e.message});
     }
@@ -24,7 +24,7 @@ exports.createUsers = async function(req, res, next){
     }
 
     try{
-        var createdUser = await TodoService.createTodo(todo)
+        var createdUser = await UserService.createUser(users)
         return res.status(201).json({status: 201, data: createdUser, message: "Succesfully Created User"})
     }catch(e){
         return res.status(400).json({status: 400, message: "User Creation was Unsuccesfull"})
@@ -41,7 +41,7 @@ exports.updateUsers = async function(req, res, next){
 
     console.log(req.body)
 
-    var todo = {
+    var users = {
         id,
         username: req.body.username ? req.body.username : null,
         email: req.body.email ? req.body.email : null,
