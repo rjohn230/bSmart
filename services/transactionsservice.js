@@ -66,7 +66,6 @@ exports.updateTransactions = async function(transactionupdate){
 }
 
 exports.deleteTransactions = async function(id){
-
     try{
         var deleted = await Transaction.remove({_id: id})
         if(deleted.result.n === 0){
