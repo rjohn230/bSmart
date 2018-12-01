@@ -3,15 +3,24 @@
     <span>Edit Budget</span>
   </nb-card-header>
   <nb-card-body>
+    <div class="budget-bar">
+      <div *ngIf="totalPercent <= 100; then validProgressBar else errorProgessBar"></div>
+      <ng-template #validProgressBar>
+        <nb-progress-bar [value]="totalPercent" status="info">{{totalPercent}}%</nb-progress-bar>
+      </ng-template>
+      <ng-template #errorProgessBar>
+        <nb-progress-bar [value]="100" status="danger">{{totalPercent}}%</nb-progress-bar>
+      </ng-template>
+    </div>
     <div>
       <ul>
         <li *ngFor="let item of categories">
-          <div class="row">
+          <div class="row category">
             <div class="col-md-8 align-self-center">
-              <h3>{{ item.name }} {{ item.budgetPercent }}</h3>
+              <h3>{{ item.name }}</h3>
             </div>
             <div class="col-md-2 text-right">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" [(ngModel)]="item.budgetPercent" (change)="updateTotalPercent()">
             </div>
           </div>
         </li>

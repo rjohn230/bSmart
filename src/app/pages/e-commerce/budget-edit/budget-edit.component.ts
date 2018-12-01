@@ -9,6 +9,7 @@ import { Category } from '../../../@core/data/budget.service';
 export class BudgetEditComponent implements OnInit {
 
   categories: Category[];
+  totalPercent: number;
 
   constructor() {}
 
@@ -27,5 +28,16 @@ export class BudgetEditComponent implements OnInit {
         "budgetPercent": 10
       }
     ]
+    this.updateTotalPercent();
   }
+
+  updateTotalPercent() {
+    let total = 0;
+    this.categories.forEach(element => {
+      total += Number(element.budgetPercent);
+    });
+    this.totalPercent = total;
+  }
+
+  
 }
