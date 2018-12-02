@@ -30,7 +30,7 @@ exports.createTransactions = async function(req, res, next){
         var createdTransaction = await TransactionService.createTransaction(transaction)
         return res.status(201).json({status: 201, data: createdTransaction, message: "Succesfully Created Transaction"})
     }catch(e){
-        return res.status(400).json({status: 400, message: "Transaction Creation was Unsuccesfull"})
+        return res.status(400).json({status: 400, message: "Transaction Creation was Unsuccesfull "+ e})
     }
 }
 

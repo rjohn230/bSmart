@@ -11,7 +11,7 @@ exports.getUsers = async function(query, page, limit){
         var usersGet = await User.paginate(query, options)
         return usersGet;
     } catch (e) {
-        throw Error('Error while Paginating usersget')
+        throw Error('Error while paginating usersget')
     }
 }
 
@@ -27,7 +27,7 @@ exports.createUsers = async function(usercreate){
         var savedUser = await newUser.save()
         return savedUser;
     }catch(e){
-        throw Error("Error while Creating newUser")
+        throw Error("Error while creating newUser: " + e)  // Or whatever javascript wants idk
     }
 }
 
@@ -37,7 +37,12 @@ exports.updateUsers = async function(userupdate){
     try{
         var oldUser = await User.findById(id);
     }catch(e){
-        throw Error("Error occured while Finding the user")
+        // TODO remove this junk:
+        // node.log(e)
+        // print(e)
+        // whatever_js_wants(e)
+        console.log("error finding user")
+        throw Error("Error occured while finding the user")
     }
 
     if(!oldUser){
@@ -57,7 +62,7 @@ exports.updateUsers = async function(userupdate){
         var savedUser = await oldUser.save()
         return savedUser;
     }catch(e){
-        throw Error("And Error occured while updating the user");
+        throw Error("An error occured while updating the user");
     }
 }
 
@@ -66,10 +71,10 @@ exports.deleteUser = async function(id){
     try{
         var deleted = await User.remove({_id: id})
         if(deleted.result.n === 0){
-            throw Error("User Could not be deleted")
+            throw Error("User could not be deleted")
         }
         return deleted
     }catch(e){
-        throw Error("Error Occured while Deleting the User")
+        throw Error("Error occured while deleting the User")
     }
 }

@@ -24,10 +24,10 @@ exports.createUsers = async function(req, res, next){
     }
 
     try{
-        var createdUser = await UserService.createUser(users)
+        var createdUser = await UserService.createUsers(usercreate)
         return res.status(201).json({status: 201, data: createdUser, message: "Succesfully Created User"})
     }catch(e){
-        return res.status(400).json({status: 400, message: "User Creation was Unsuccesfull"})
+        return res.status(400).json({status: 400, message: "User Creation was Unsuccessful "+ e})
     }
 }
 
@@ -49,7 +49,7 @@ exports.updateUsers = async function(req, res, next){
     }
 
     try{
-        var updatedUser = await UserService.updateUser(userupdate)
+        var updatedUser = await UserService.updateUser(users)
         return res.status(200).json({status: 200, data: updatedUser, message: "Succesfully Updated User"})
     }catch(e){
         return res.status(400).json({status: 400., message: e.message})
