@@ -18,9 +18,9 @@ exports.getUsers = async function(req, res, next){
 
 exports.createUsers = async function(req, res, next){
     var usercreate = {
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
+        username: req.username,
+        email: req.email,
+        password: req.password
     }
 
     try{
@@ -33,19 +33,19 @@ exports.createUsers = async function(req, res, next){
 
 exports.updateUsers = async function(req, res, next){
 
-    if(!req.body._id){
+    if(!req._id){
         return res.status(400).json({status: 400., message: "Id must be present"})
     }
 
-    var id = req.body._id;
+    var id = req._id;
 
     console.log(req.body)
 
     var users = {
         id,
-        username: req.body.username ? req.body.username : null,
-        email: req.body.email ? req.body.email : null,
-        password: req.body.password ? req.body.password : null
+        username: req.username ? req.username : null,
+        email: req.email ? req.email : null,
+        password: req.password ? req.password : null
     }
 
     try{

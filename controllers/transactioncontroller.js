@@ -36,21 +36,21 @@ exports.createTransactions = async function(req, res, next){
 
 exports.updateTransactions = async function(req, res, next){
 
-    if(!req.body._id){
+    if(!req._id){
         return res.status(400).json({status: 400., message: "Id must be present"})
     }
 
-    var id = req.body._id;
+    var id = req._id;
 
-    console.log(req.body)
+    console.log(req)
 
     var transaction = {
         id,
-        transaction_id: req.body.transaction_id ? req.body.transaction_id : null,
-        amount: req.body.amount ? req.body.amount : null,
-        date: req.body.date ? req.body.date : null,
-        name: req.body.name ? req.body.name : null,
-        category: req.body.category ? req.body.category : null
+        transaction_id: req.transaction_id ? req.transaction_id : null,
+        amount: req.amount ? req.amount : null,
+        date: req.date ? req.date : null,
+        name: req.name ? req.name : null,
+        category: req.category ? req.category : null
     }
 
     try{
