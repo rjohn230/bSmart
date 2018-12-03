@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { Client } from 'plaid';
+import { PlaidService } from '../../../@core/data/plaid.service';
 
 @Component({
   selector: 'ngx-plaid-button',
@@ -16,12 +18,17 @@ export class PlaidButtonComponent implements OnInit {
       env: 'development',
       key: '5b90ad3428575376ee2637218f0009',
       product: ['auth', 'transactions'],
+      selectAccount: true,
       onLoad: function() {
         console.log('loaded');
       },
       onSuccess: function(public_token, metadata) {
         console.log(public_token);
         console.log(JSON.stringify(metadata));
+
+        // var client = new Client('development',public_token,)
+        // PlaidService()
+        // 
       },
       onExit: function(err, metadata) {
         if (err != null) {
