@@ -10,7 +10,7 @@ exports.getTransactions = async function(query, page, limit){
     console.log(page, limit)
 
     try{
-        var todos = await TransactionService.getTransactions({}, page, limit)
+        var transactions = await TransactionService.getTransactions({}, page, limit)
         return res.status(200).json({status: 200, data: transaction, message: "Succesfully Recieved Transaction"});
     }catch(e){
         return res.status(400).json({status: 400, message: e.message});

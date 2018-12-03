@@ -6,7 +6,7 @@ exports.getUsers = async function(req, res, next){
     var page = req.query.page ? req.query.page : 1
     var limit = req.query.limit ? req.query.limit : 10;
 
-    console.log(page, limit)
+    //console.log(page, limit)
 
     try{
         var users = await UserService.getUsers({}, page, limit)
@@ -17,7 +17,7 @@ exports.getUsers = async function(req, res, next){
 }
 
 exports.createUsers = async function(req, res, next){
-    var usercreate = {
+    var usercreate = await{
         username: req.username,
         email: req.email,
         password: req.password
@@ -27,19 +27,19 @@ exports.createUsers = async function(req, res, next){
         var createdUser = await UserService.createUsers(usercreate)
         return res.status(201).json({status: 201, data: createdUser, message: "Succesfully Created User"})
     }catch(e){
-        return res.status(400).json({status: 400, message: "User Creation was Unsuccessful "+ e})
+        return res.status(469).json({status: 469, message: "User Creation was Unsuccessful "+ e})
     }
 }
 
 exports.updateUsers = async function(req, res, next){
 
+    var id = req._id;
+
     if(!req._id){
         return res.status(400).json({status: 400., message: "Id must be present"})
     }
 
-    var id = req._id;
-
-    console.log(req.body)
+    //console.log(req.body)
 
     var users = {
         id,
@@ -49,8 +49,8 @@ exports.updateUsers = async function(req, res, next){
     }
 
     try{
-        var updatedUser = await UserService.updateUser(users)
-        return res.status(200).json({status: 200, data: updatedUser, message: "Succesfully Updated User"})
+        var userupdate = await UserService.updateUser(userupdate)
+        return res.status(200).json({status: 200, data: userupdate, message: "Succesfully Updated User"})
     }catch(e){
         return res.status(400).json({status: 400., message: e.message})
     }
