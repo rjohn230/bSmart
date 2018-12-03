@@ -20,9 +20,9 @@ exports.createUsers = async function(usercreate){
     var newUser = new User({
         username: usercreate.username,
         email: usercreate.email,
-        password: usercreate.passsword
+        password: usercreate.password
     })
-
+    console.log(usercreate);
     try{
         var savedUser = await newUser.save()
         return savedUser;
@@ -70,11 +70,11 @@ exports.deleteUser = async function(id){
 
     try{
         var deleted = await User.remove({_id: id})
-        if(deleted.result.n === 0){
+        if(deleted.result === 0){
             throw Error("User could not be deleted")
         }
         return deleted
     }catch(e){
-        throw Error("Error occured while deleting the User")
+        throw Error("Error occured while deleting the User"+e)
     }
 }

@@ -9,8 +9,8 @@ exports.getTransactions = async function(query, page, limit){
         limit
     }
     try {
-        var transaction = await Transaction.paginate(query, options)
-        return transaction;
+        var transactionGet = await Transaction.paginate(query, options)
+        return transactionGet;
     } catch (e) {
         throw Error('Error while Paginating Transaction')
     }
