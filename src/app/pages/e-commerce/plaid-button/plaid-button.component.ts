@@ -20,23 +20,18 @@ export class PlaidButtonComponent implements OnInit {
       product: ['auth', 'transactions'],
       selectAccount: true,
       onLoad: function() {
-        console.log('loaded');
+
       },
       onSuccess: function(public_token, metadata) {
-        console.log(public_token);
-        console.log(JSON.stringify(metadata));
-
         // var client = new Client('development',public_token,)
         // PlaidService()
         // 
       },
       onExit: function(err, metadata) {
         if (err != null) {
-          console.log(err);
+
         }
-        console.log(metadata);
-        console.log(metadata.institution.name, metadata.institution.institution_id);
-        console.log(metadata.request_id)
+        
       }
     });
   }
