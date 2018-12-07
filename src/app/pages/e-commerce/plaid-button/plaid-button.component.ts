@@ -14,7 +14,7 @@ export class PlaidButtonComponent implements OnInit {
 
     this.linkHandler = Plaid.create({
       clientName: 'bSmart',
-      env: 'sandbox',
+      env: 'development',
       key: '5b90ad3428575376ee2637218f0009',
       product: ['auth', 'transactions'],
       onLoad: function() {
