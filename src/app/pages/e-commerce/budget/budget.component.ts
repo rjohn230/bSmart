@@ -13,9 +13,19 @@ export class BudgetComponent implements OnInit {
       activeProgress: '40'
     },
     {
-      title: 'Food',
+      title: 'Groceries',
       budgetRemaining: '158.39',
       activeProgress: '70'
+    },
+    {
+      title: 'Shopping',
+      budgetRemaining: '20.21',
+      activeProgress: '30'
+    },
+    {
+      title: 'Restaurants',
+      budgetRemaining: '54.70',
+      activeProgress: '60'
     },
     {
       title: 'Rent',

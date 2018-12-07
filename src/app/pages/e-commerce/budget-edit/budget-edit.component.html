@@ -1,8 +1,7 @@
 <nb-card size="medium">
   <nb-card-header>
     <span>Edit Budget</span>
-  </nb-card-header>
-  <nb-card-body>
+    <hr>
     <div class="budget-bar">
       <div *ngIf="totalPercent <= 100; then validProgressBar else errorProgessBar"></div>
       <ng-template #validProgressBar>
@@ -12,27 +11,42 @@
         <nb-progress-bar [value]="100" status="danger">{{totalPercent}}%</nb-progress-bar>
       </ng-template>
     </div>
+  </nb-card-header>
+
+  <nb-card-body>
     <div>
       <ul>
         <li *ngFor="let item of categories">
           <div class="row category">
+            <div>
+              <button class="btn btn-outline-danger btn-xs align-self-center" (click)="onDeleteClicked(item)">x</button>
+            </div>
             <div class="col-md-8 align-self-center">
               <h3>{{ item.name }}</h3>
             </div>
-            <div class="col-md-2 text-right">
-              <input type="text" class="form-control" [(ngModel)]="item.budgetPercent" (change)="updateTotalPercent()">
+            <div class="col-md-2 float-right">
+              <input type="text" class="form-control float-right" [(ngModel)]="item.budgetPercent" (change)="updateTotalPercent()">
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Category Name">
-      <span class="input-group-append">
-        <button class="btn btn-success input-group-text">
-          Add
-        </button>
-      </span>
-    </div>
   </nb-card-body>
+
+  <nb-card-footer>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <div class="form-group input-group category-input">
+        <input type="text" name="name" class="form-control"
+          [(ngModel)]="category.name"
+          placeholder="Category Name"
+          #categoryName="ngModel"
+          required
+        >
+        <span class="input-group-append">
+          <button type="submit" class="btn btn-success input-group-text">Add</button>
+        </span>
+      </div>
+    </form>
+  </nb-card-footer>
+
 </nb-card>

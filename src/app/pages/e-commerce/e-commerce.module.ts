@@ -50,6 +50,8 @@ import { TransactionsService } from '../../@core/data/transactions.service';
 import { BudgetComponent } from './budget/budget.component';
 import { BudgetEditComponent } from './budget-edit/budget-edit.component';
 
+import { BudgetService } from '../../@core/data/budget.service';
+
 @NgModule({
   imports: [
     ThemeModule,
@@ -97,7 +99,8 @@ import { BudgetEditComponent } from './budget-edit/budget-edit.component';
   ],
   providers: [
     CountryOrdersMapService,
-    TransactionsService
+    TransactionsService,
+    BudgetService
   ],
 })
 export class ECommerceModule { }

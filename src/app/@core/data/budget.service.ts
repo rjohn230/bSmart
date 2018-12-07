@@ -15,27 +15,40 @@ export class Budget {
 
 @Injectable()
 export class BudgetService {
+    categories: Category[];
+
     data = {};
 
     constructor() {
-        this.data = {
-            budget: {
-                "total": 1000.0,
-                "categories": [
-                    {
-                        "name": "Rent",
-                        "budgetPercent": 0.5
-                    },
-                    {
-                        "name": "Food",
-                        "budgetPercent": 0.4
-                    },
-                    {
-                        "name": "Entertainment",
-                        "budgetPercent": 0.1
-                    }
-                ]
+        this.categories = [
+            {
+                "name": "Rent",
+                "budgetPercent": 45
+            },
+            {
+                "name": "Groceries",
+                "budgetPercent": 30
+            },
+            {
+                "name": "Restaurants",
+                "budgetPercent": 10
+            },
+            {
+                "name": "Entertainment",
+                "budgetPercent": 5
+            },
+            {
+                "name": "Shopping",
+                "budgetPercent": 10
             }
-        };
+        ]
+    }
+    
+    getCategories(): Category[] {
+        return this.categories;
+    }
+
+    addCategory(category: Category) {
+        this.categories.unshift(category);
     }
 }

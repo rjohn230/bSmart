@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Category } from '../../../@core/data/budget.service';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
+import { Category, BudgetService, Category } from '../../../@core/data/budget.service';
 
 @Component({
   selector: 'ngx-budget-edit',
@@ -10,24 +10,13 @@ export class BudgetEditComponent implements OnInit {
 
   categories: Category[];
   totalPercent: number;
-
-  constructor() {}
+  category: Category;
+  constructor(private budgetService: BudgetService) {}
 
   ngOnInit() {
-    this.categories = [
-      {
-        "name": "Rent",
-        "budgetPercent": 50
-      },
-      {
-        "name": "Food",
-        "budgetPercent": 40
-      },
-      {
-        "name": "Entertainment",
-        "budgetPercent": 10
-      }
-    ]
+    this.categories = this.budgetService.getCategories();
+    this.category = new Category("",0);
+
     this.updateTotalPercent();
   }
 
@@ -39,5 +28,15 @@ export class BudgetEditComponent implements OnInit {
     this.totalPercent = total;
   }
 
-  
+  onSubmit() {
+    console.log("submitted: "+ this.category.name);
+    this.budgetService.addCategory(this.category);
+    this.category = new Category("",0);
+  }
+
+  onDeleteClicked(category: Category) {
+    
+    console.log(category.name)
+    this.category
+  }
 }

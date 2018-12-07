@@ -39,6 +39,13 @@ export class TransactionsService {
             "date": "2018-10-20",
             "name": "Starbucks",
             "category": "Restaurants",
+        },
+        {
+          "amount": 630.0,
+          "date": "2018-10-16",
+          "name": "CD DEPOSIT .INITIAL.",
+          "category": "Restaurants",
+          
         }
       ]
     };
