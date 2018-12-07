@@ -1,0 +1,15 @@
+<nb-card size="medium">
+  <nb-card-header>
+    <span>Budget</span>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="progress-info" *ngFor="let category of categories">
+      <div class="title">{{ category.title }}</div>
+      <div class="value">{{ category.budgetRemaining | currency:'USD' }}<span class="description"> Remaining</span></div>
+      <nb-progress-bar [value]="category.activeProgress"></nb-progress-bar>
+      <!-- <div class="description">
+        <bdi>{{ item.description }}</bdi>
+      </div> -->
+    </div>
+  </nb-card-body>
+</nb-card>

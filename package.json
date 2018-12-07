@@ -1,14 +1,7 @@
 {
-  "name": "ngx-admin",
-  "version": "2.3.0",
+  "name": "bSmart",
+  "version": "1.1.0",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akveo/ngx-admin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/akveo/ngx-admin/issues"
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -17,7 +10,7 @@
   "scripts": {
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
-    "start": "ng serve",
+    "start": "ng serve && node app",
     "build": "ng build",
     "build:prod": "npm run build -- --prod --aot",
     "test": "ng test",
@@ -71,6 +64,7 @@
     "ngx-echarts": "2.0.1",
     "normalize.css": "6.0.0",
     "pace-js": "1.0.2",
+    "plaid": "^2.10.0",
     "roboto-fontface": "0.8.0",
     "rxjs": "^6.1.0",
     "rxjs-compat": "^6.1.0",
@@ -78,7 +72,24 @@
     "tinymce": "4.5.7",
     "typeface-exo": "0.0.22",
     "web-animations-js": "2.2.5",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "bcryptjs": "*",
+    "bluebird": "*",
+    "body-parser": "*",
+    "consolidate": "^0.15.1",
+    "cookie-parser": "*",
+    "cors": "*",
+    "ejs": "^2.6.1",
+    "express": "*",
+    "html": "^1.0.0",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "mongoose-paginate": "*",
+    "nodemon": "*",
+    "passport": "*",
+    "passport-jwt": "*",
+    "swig": "^1.4.2"
   },
   "devDependencies": {
     "@angular/cli": "6.0.0",

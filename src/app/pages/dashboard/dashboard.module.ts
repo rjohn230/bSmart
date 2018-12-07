@@ -13,6 +13,11 @@ import { KittenComponent } from './kitten/kitten.component';
 import { ElectricityComponent } from './electricity/electricity.component';
 import { ElectricityChartComponent } from './electricity/electricity-chart/electricity-chart.component';
 import { PlayerComponent } from './rooms/player/player.component';
+import { ECommerceUserTransactionsComponent } from './transactions/transactions.component';
+import { TransactionsService } from '../../@core/data/transactions.service';
+import { BudgetComponent } from './budget/budget.component';
+import { BudgetEditComponent } from './budget-edit/budget-edit.component';
+import { BudgetService } from '../../@core/data/budget.service';
 
 
 @NgModule({
@@ -31,6 +36,13 @@ import { PlayerComponent } from './rooms/player/player.component';
     ElectricityComponent,
     ElectricityChartComponent,
     PlayerComponent,
+    ECommerceUserTransactionsComponent,
+    BudgetComponent,
+    BudgetEditComponent,
   ],
+  providers: [
+    TransactionsService,
+    BudgetService
+  ]
 })
 export class DashboardModule { }
