@@ -1,0 +1,30 @@
+<nb-card size="medium">
+  <nb-card-header>
+    <div class="title">Spending Breakdown</div>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="visitors-statistics">
+      <div class="statistics-header">
+        <div class="visitors-value">$1,100</div>
+        <div class="visitors-title">Spent in past week</div>
+      </div>
+      <div class="statistics-chart">
+        <div echarts
+             [options]="option"
+             class="echart"
+             (chartInit)="onChartInit($event)"
+        >
+        </div>
+      </div>
+      <div class="statistics-footer">
+        <div class="chart-values">
+          <span class="chart-value">25%</span>
+          <span class="chart-value">75%</span>
+        </div>
+        <ngx-legend-chart class="visitors-statistics-legend" [legendItems]="chartLegend"></ngx-legend-chart>
+      </div>
+    </div>
+    
+  </nb-card-body>
+</nb-card>
+

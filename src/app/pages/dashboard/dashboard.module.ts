@@ -18,6 +18,8 @@ import { TransactionsService } from '../../@core/data/transactions.service';
 import { BudgetComponent } from './budget/budget.component';
 import { BudgetEditComponent } from './budget-edit/budget-edit.component';
 import { BudgetService } from '../../@core/data/budget.service';
+import { SpendingComponent } from './spending/spending.component';
+import { ECommerceLegendChartComponent} from './legend-chart/legend-chart.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { BudgetService } from '../../@core/data/budget.service';
     ECommerceUserTransactionsComponent,
     BudgetComponent,
     BudgetEditComponent,
+    SpendingComponent,
+    ECommerceLegendChartComponent,
   ],
   providers: [
     TransactionsService,

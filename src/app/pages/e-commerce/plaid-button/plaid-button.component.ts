@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaidService } from '../../../@core/data/plaid.service';
+import { getAccessToken } from '../../../../../app.js';
 
 @Component({
   selector: 'ngx-plaid-button',
